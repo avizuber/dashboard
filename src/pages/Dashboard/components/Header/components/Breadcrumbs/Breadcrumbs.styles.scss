@@ -1,0 +1,26 @@
+@import "/src/styles/colors";
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+
+    .breadcrumbs-item {
+        color: $primary;
+        font-weight: 700;
+        margin-right: 5px;
+
+        &:last-of-type {
+            font-weight: 400;
+        }
+    }
+
+    .breadcrumbs-icon {
+        width: 8px;
+        height: 10px;
+
+        svg {
+            width: 8px;
+            height: 10px;
+        }
+    }
+}

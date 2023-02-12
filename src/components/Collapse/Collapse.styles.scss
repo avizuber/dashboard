@@ -1,0 +1,41 @@
+@import "/src/styles/colors";
+
+.collapse {
+    margin-bottom: 30px;
+
+    .collapse_header {
+        font-weight: 800;
+        color: $text-gray;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .collapse_body {
+        display: block;
+    }
+
+    .collapse_header-toggle {
+        height: 15px;
+        width: 15px;
+        background:$light-gray;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+
+        svg {
+            height: 12px;
+            width: 12px;
+        }
+    }
+
+    &.is-closed {
+        .collapse_header-toggle {
+            transform: rotate(-90deg);
+        }
+        .collapse_body {
+            display: none;
+        }
+    }
+}

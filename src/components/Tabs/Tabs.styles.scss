@@ -1,0 +1,25 @@
+@import "/src/styles/colors";
+
+.tabs {
+    display: flex;
+
+    .tabs-item {
+        font-weight: 700;
+        color: $text-gray;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        font-size: 14px;
+        // margin-bottom on a universal component is wrong
+        margin-bottom: -2px;
+
+        .tabs-item_name {
+            display: block;
+            padding: 0px 15px 10px 15px;
+        }
+
+        &.active {
+            border-color: $primary;
+            color: $primary;
+        }
+    }
+}

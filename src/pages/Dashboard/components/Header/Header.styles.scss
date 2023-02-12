@@ -1,0 +1,34 @@
+@import "/src/styles/colors";
+@import "/src/styles/spacing";
+
+.header {
+    background: $white;
+    padding: 34px $padding-h 0 $padding-h;
+    box-shadow: $default-shadow;
+    margin-bottom: 42px;
+}
+
+.header_page-title {
+    margin-bottom: 23px;
+
+    .method {
+        text-transform: uppercase;
+        color: $primary-accent;
+        font-weight: 600;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    
+    .path {
+        color: $primary;
+        font-weight: 700;
+        font-size: 22px;
+    }
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin: 23px 0;
+    background: $background-gray;
+}

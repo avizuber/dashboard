@@ -1,0 +1,12 @@
+@import "/src/styles/colors";
+@import "/src/styles/spacing";
+body {
+    margin: 0;
+    background: $background-gray;
+}
+
+.dashboard {
+    .dashboard_body {
+        padding: 0 $padding-h;
+    }
+}

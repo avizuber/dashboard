@@ -1,0 +1,13 @@
+@import "/src/styles/colors";
+
+.tag {
+    min-width: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    align-self: flex-start;
+    letter-spacing: -1px;
+    color: $tertiary;
+    background: $tertiary-accent;
+}

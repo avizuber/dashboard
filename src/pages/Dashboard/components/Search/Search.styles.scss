@@ -1,0 +1,77 @@
+@import "/src/styles/colors";
+
+$search-bar-height: 30px;
+$search-bar-padding-v: 8px;
+
+.search {
+    background: $white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+
+    .search-left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: $search-bar-padding-v 0px $search-bar-padding-v 18px;
+        height: $search-bar-height;
+        margin-right: 32px;
+    }
+
+    .search-icon {
+        width: 20px;
+        margin-right: 15px;
+
+        svg {
+            path {
+                fill: $text-gray;
+            }
+        }
+    }
+
+    .search-input {
+        flex: 1;
+        input {
+            border: none;
+            padding: 10px 0;
+            // outline: none is an accessibility concern, IIRC
+            outline: none;
+            width: 100%;
+        }
+    }
+
+    .search-separator {
+        width: 2px;
+        background: $light-gray;
+        height: 100%;
+        margin: 0 32px;
+    }
+
+    .search-filter {
+        display: flex;
+        align-items: center;
+        
+        .search-filter_label {
+            font-size: 12px;
+            letter-spacing: -1px;
+            font-weight: 600;
+            color: $text-gray;
+        }
+    }
+
+    .search-button {
+        display: flex;
+        height: $search-bar-height + ($search-bar-padding-v * 2);
+    }
+}
+
+.search-reset {
+    display: flex;
+    width: 64px;
+    margin-left: auto;
+    margin-bottom: 32px;
+    font-size: 12px;
+    text-align: right;
+    color: $primary;
+    cursor: pointer;
+}
