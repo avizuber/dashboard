@@ -1,6 +1,7 @@
 # Welcome to Dashboard
 
 Written in React, Typescript and Sass
+
 Considerations: https://docs.google.com/presentation/d/1iw8Fexg9Y4xUe_vqIbqBWWghU7gSVehNghlvruojGq4/edit?usp=sharing
 
 # Getting Started with Create React App
