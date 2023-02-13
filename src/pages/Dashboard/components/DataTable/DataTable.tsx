@@ -52,6 +52,7 @@ const DataTable = ({ data }: DataTableProps) => {
                           label='Masked'
                           theme='primary'
                           isOn={rowItem.masking}
+                          onClick={() => (rowItem.masking = !rowItem.masking)}
                         />
                       </span>
                       <span className='data-table_col-4'>

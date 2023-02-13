@@ -1,38 +1,17 @@
 import './Search.styles.scss';
 import { Button, Icon } from 'components';
 import SearchIcon from '../../../../assets/icons/magnifying-glass.svg';
-import { useContext } from 'react';
-import { DataContext } from 'utils/context';
-import { useState } from 'react';
+import useSearch from './useSearch';
 
 const Search = () => {
-  const { setSearchValues } = useContext(DataContext);
-  const [searchValue, setSearchValue] = useState<string>('');
-  const [piiOnly, setPiiOnly] = useState<boolean>(false);
-
-  const handleSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-  };
-
-  const handlePIIOnlyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPiiOnly(e.target.checked);
-  };
-
-  const handleFilterData = () => {
-    setSearchValues({
-      queryString: searchValue,
-      piiOnlyStatus: piiOnly,
-    });
-  };
-
-  const handleReset = () => {
-    setSearchValue('');
-    setPiiOnly(false);
-    setSearchValues({
-      queryString: '',
-      piiOnlyStatus: false,
-    });
-  };
+  const {
+    searchValue,
+    handleSearchValueChange,
+    piiOnly,
+    handlePIIOnlyChange,
+    handleFilterData,
+    handleReset,
+  } = useSearch();
 
   return (
     <>

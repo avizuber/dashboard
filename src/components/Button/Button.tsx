@@ -2,7 +2,7 @@ import './Button.styles.scss';
 interface ButtonProps {
   label: string;
   name?: string;
-  onClick?: () => void;
+  onClick: () => void;
 }
 const Button = ({ label, onClick, name }: ButtonProps) => {
   return (

@@ -1,15 +1,17 @@
-import { useContext } from 'react';
-import { DataContext } from 'utils/context';
-import { DataTable } from '../index';
+import { DataContext, useDataContext } from 'utils/context';
 
 interface DashboardBodyProps {
-  dataType: any;
+  children: React.ReactElement | React.ReactElement[];
 }
 
-const DashboardBody = ({ dataType }: DashboardBodyProps) => {
-  const { currentData } = useContext(DataContext);
+const DashboardBody = ({ children }: DashboardBodyProps) => {
+  const { defaultValues } = useDataContext();
 
-  return <DataTable data={currentData[`${dataType}`]} />;
+  return (
+    <DataContext.Provider value={defaultValues}>
+      {children}
+    </DataContext.Provider>
+  );
 };
 
 export default DashboardBody;

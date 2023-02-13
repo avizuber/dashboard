@@ -1,24 +1,16 @@
 import './Collapse.styles.scss';
 import React from 'react';
-import { useState } from 'react';
 import { Icon } from 'components';
 import CollapseArrow from '../../assets/icons/caret-down.svg';
+import useCollapse from './useCollapse';
 
 interface CollapseProps {
   header: string;
   children: React.ReactElement;
 }
 
-const formatHeaderText = (header: string) => {
-  const result = header.replace(/([A-Z])/g, ' $1');
-  return result.charAt(0).toUpperCase() + result.slice(1);
-};
-
 const Collapse = ({ header, children }: CollapseProps) => {
-  const [isOpen, setIsOpen] = useState(true);
-  const handleCollapseToggle = () => {
-    setIsOpen(!isOpen);
-  };
+  const { isOpen, handleCollapseToggle, formatHeaderText } = useCollapse();
 
   // TODO: Accessibility for header click
 

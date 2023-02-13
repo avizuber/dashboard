@@ -24,7 +24,7 @@ $search-bar-padding-v: 8px;
 
         svg {
             path {
-                fill: $text-gray;
+                fill: $mid-gray;
             }
         }
     }
@@ -37,6 +37,11 @@ $search-bar-padding-v: 8px;
             // outline: none is an accessibility concern, IIRC
             outline: none;
             width: 100%;
+        }
+
+        ::placeholder {
+            color: darken($light-gray, 10%);
+            opacity: 1;
         }
     }
 
@@ -67,11 +72,12 @@ $search-bar-padding-v: 8px;
 
 .search-reset {
     display: flex;
-    width: 64px;
+    width: 68px;
     margin-left: auto;
     margin-bottom: 32px;
     font-size: 12px;
     text-align: right;
     color: $primary;
     cursor: pointer;
+    font-weight: 600;
 }

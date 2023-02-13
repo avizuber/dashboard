@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import './ToggleButton.styles.scss';
+import useToggleButton from './useToggleButton';
 
 interface ToggleButtonProps {
   label: string;
@@ -9,13 +9,10 @@ interface ToggleButtonProps {
 }
 
 const ToggleButton = ({ label, isOn, theme, onClick }: ToggleButtonProps) => {
+  const { isActive, handleToggleClick } = useToggleButton({ isOn, onClick });
+
   // TODO: Accessibility on button
   // TODO: Consider optimistic UI using local state
-  const [isActive, setIsActive] = useState(isOn);
-  const handleToggleClick = () => {
-    setIsActive(!isActive);
-    onClick && onClick();
-  };
 
   return (
     <div

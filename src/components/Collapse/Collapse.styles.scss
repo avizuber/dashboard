@@ -17,7 +17,7 @@
     .collapse_header-toggle {
         height: 15px;
         width: 15px;
-        background:$light-gray;
+        background: $light-gray;
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
@@ -27,6 +27,10 @@
         svg {
             height: 12px;
             width: 12px;
+
+            path {
+                fill: $primary;
+            }
         }
     }
 

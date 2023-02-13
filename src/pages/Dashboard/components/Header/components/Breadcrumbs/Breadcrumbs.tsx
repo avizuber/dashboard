@@ -1,25 +1,13 @@
 import './Breadcrumbs.styles.scss';
-import { Icon } from 'components';
-import ArrowIcon from '../../../../../../assets/icons/angle-right.svg';
+import useBreadcrumbs from './useBreadcrumbs';
 
 interface BreadcrumbsProps {
   breadcrumbsData: string[];
 }
 
-const formattedBreadcrumbs = (breadcrumbsData: (string | JSX.Element)[]) => {
-  return breadcrumbsData.reduce<(string | JSX.Element)[]>(
-    (acc, val) =>
-      acc.concat(
-        val,
-        <span className='breadcrumbs-icon'>
-          <Icon src={ArrowIcon} />
-        </span>
-      ),
-    []
-  );
-};
-
 const Breadcrumbs = ({ breadcrumbsData }: BreadcrumbsProps) => {
+  const { formattedBreadcrumbs } = useBreadcrumbs();
+
   return (
     <div className='breadcrumbs'>
       {formattedBreadcrumbs(breadcrumbsData)

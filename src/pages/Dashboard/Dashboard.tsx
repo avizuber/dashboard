@@ -1,17 +1,12 @@
 import './Dashboard.styles.scss';
-import { DashboardBody, Header, Search } from './components';
-import { DataContext, useDataContext } from 'utils/context';
+import { DashboardBody, DashboardData, Header, Search } from './components';
 import { Tabs } from 'components';
-import { dashboardTabs } from './dashboardTabs';
+import { dashboardTabs } from './constants';
 import { useState } from 'react';
 import { TabType } from 'components/Tabs/Tabs';
 
 const Dashboard = () => {
-  const { defaultValues } = useDataContext();
-
   const [activeTab, setActiveTab] = useState<TabType>(dashboardTabs[0]);
-
-  console.log('i am rerender');
 
   return (
     <div className='dashboard'>
@@ -22,12 +17,13 @@ const Dashboard = () => {
           setActiveTab={(at) => setActiveTab(at)}
         />
       </Header>
-      <DataContext.Provider value={defaultValues}>
-        <div className='dashboard_body'>
+
+      <div className='dashboard_body'>
+        <DashboardBody>
           <Search />
-          <DashboardBody dataType={activeTab.content} />
-        </div>
-      </DataContext.Provider>
+          <DashboardData dataType={activeTab.content} />
+        </DashboardBody>
+      </div>
     </div>
   );
 };
